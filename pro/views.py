@@ -2,21 +2,16 @@ from django.shortcuts import render
 from .models import our_collection
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.decorators import api_view
 import json
 from django.http import JsonResponse
 from django.http import HttpResponse
 from llm import LLMChain 
-from rest_framework.response import Response
-from django.core import serializers
-from django.db import connection
 from datetime import datetime
 
 def index(request):
     return HttpResponse('Yeah this website is Running wohooo')
 
 @csrf_exempt
-@api_view(['POST','GET'])
 def add_test(request):
     if request.method == 'POST':
         data = request.data
@@ -53,7 +48,6 @@ def add_test(request):
 #        return JsonResponse({'data':data},status=200)
 
 @csrf_exempt
-@api_view(['DELETE'])
 def delete_all_records(request):
     if request.method == 'DELETE':
         result = our_collection.delete_many({})
