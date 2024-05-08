@@ -1,6 +1,6 @@
 import pymongo
 
-url = 'mongodb://localhost:27017'
+url = 'mongodb+srv://Harsh:Harsh1998#@atlaschat.nh2jjcm.mongodb.net/'
 
 client = pymongo.MongoClient(url)
-db = client['AI_bot']
+db = client['Atlaschat']

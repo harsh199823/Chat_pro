@@ -3,13 +3,10 @@ from .models import our_collection
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
-import json
 from django.http import JsonResponse
 from django.http import HttpResponse
 from llm import LLMChain 
 from rest_framework.response import Response
-from django.core import serializers
-from django.db import connection
 from datetime import datetime
 
 def index(request):
@@ -43,14 +40,6 @@ def add_test(request):
         
     return JsonResponse({'error': 'Invalid request method'}, status=400)
 
-#    elif request.method == 'GET':
-#        val = our_collection.find().sort('_id', -1).limit(1)
-#        data = []
-#        for row in val:
-#            # Convert ObjectId to string
-#            row['_id'] = str(row['_id'])
-#            data.append(row)
-#        return JsonResponse({'data':data},status=200)
 
 @csrf_exempt
 @api_view(['DELETE'])
