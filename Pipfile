@@ -6,6 +6,16 @@ name = "pypi"
 [packages]
 django = "*"
 pymongo = "*"
+djongo = "*"
+pymongo = "*"
+langchain-openai ="*"
+langchain-anthropic ="*"
+pydantic ="*"
+langchain-google-genai ="*"
+langchain ="*"
+langchain-core ="*"
+langchain-groq ="*"
+dnspython ="*"
 
 [dev-packages]
 
